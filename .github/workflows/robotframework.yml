@@ -10,17 +10,17 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Execute tests
-        - name: Robot Framework
-          uses: joonvena/robotframework-docker-action@v1.0
-          with:
-            run: robot test -d ./report Test
-          
+          uses: joonvena/robotframework-docker-action@v0.1
+          env:
+            BROWSER: chrome
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
         
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
           with:
-            name: report
+            name: reports
             path: ${{ github.workspace }}/report
         
         - name: Deploy report page to GitHub Page
