@@ -10,7 +10,9 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Execute tests
-          uses: joonvena/robotframework-docker-action@v0.1 --shm-size=1g -u root
+          uses: joonvena/robotframework-docker-action@v0.1
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
