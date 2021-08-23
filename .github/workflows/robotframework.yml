@@ -10,23 +10,25 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Execute tests
-          uses: joonvena/robotframework-docker-action@v0.1
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-          env:
-            BROWSER: chrome
-            ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
-            ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
-        
+          uses: joonvena/robotframework-docker-action@v1.0
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
           with:
-            name: reports
-            path: ${{ github.workspace }}/report
-        
-        - name: Deploy report page to GitHub Page
-          uses: peaceiris/actions-gh-pages@v3
+            name: report
+            path: report
+    
+    generate_report:
+        if: always()
+        needs: [test] 
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Download report
+          uses: actions/download-artifact@v1
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./report
+            name: report
+        - name: Send report to commit
+          uses: joonvena/robotframework-reporter-action@v1.0
+          with:
+            gh_access_token: ${{ secrets.GITHUB_TOKEN }}
