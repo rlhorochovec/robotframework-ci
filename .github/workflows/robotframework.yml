@@ -21,4 +21,4 @@ jobs:
           if: always()
           with:
             name: reports
-            path: ${{ github.workspace }}/reports
+            path: ${{ github.workspace }}
