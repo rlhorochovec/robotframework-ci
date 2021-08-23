@@ -1,2 +1,2 @@
 # robotframework-ci
-![status](https://github.com/rlhorochovec/robotframework-ci/actions/workflows/maven.yml/badge.svg)
+![status](https://github.com/rlhorochovec/robotframework-ci/actions/workflows/robotframework.yml/badge.svg)
