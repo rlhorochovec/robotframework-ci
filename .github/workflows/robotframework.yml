@@ -10,11 +10,11 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Execute tests
-          uses: joonvena/robotframework-docker-action@v0.1
-          env:
-            BROWSER: --shm-size=1g chrome
-            ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
-            ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
+        - name: Robot Framework
+          uses: joonvena/robotframework-docker-action@v1.0
+          with:
+            run: robot test -d ./report Test
+          
         
         - name: Upload test results
           uses: actions/upload-artifact@v1
