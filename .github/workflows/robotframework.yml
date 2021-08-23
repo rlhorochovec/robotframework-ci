@@ -13,4 +13,18 @@ jobs:
           uses: joonvena/robotframework-docker-action@v0.1
           env:
             BROWSER: chrome
-            ROBOT_TESTS_DIR: ${{ github.workspace }}/test
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
+            
+        - name: Upload test results
+          uses: actions/upload-artifact@v1
+          if: always()
+          with:
+            name: report
+            path: ${{ github.workspace }}/report
+            
+        - name: Deploy report page to GitHub Page
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./report
