@@ -9,4 +9,4 @@ Cenário: Salvando um novo herói - Hulk
     Quando clicar em "Adicionar"
     E Inserir "Hulk", "Bruce Benner" e "Marvel"
     E clicar em "Salvar"
-    Então apresentará a mensagem "Novo herói salvo!"
+    Então apresentará a mensagem "Novo herói adicionado!"
