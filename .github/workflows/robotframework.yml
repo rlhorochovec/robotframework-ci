@@ -11,17 +11,19 @@ jobs:
         - uses: actions/checkout@v2
         - name: Execute tests
           uses: joonvena/robotframework-docker-action@v0.1
+        - name: Permission folder
+          run: sudo chmod 777 ${{ github.workspace }}/report
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
-            #ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
             
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
           with:
             name: report
-            path: ${{ github.workspace }}/report
+            path: ./report
             
         - name: Deploy report page to GitHub Page
           uses: peaceiris/actions-gh-pages@v3
