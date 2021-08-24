@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.0 on linux)" generated="20210824 20:31:03.565" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.9.0 on linux)" generated="20210824 20:39:09.339" rpa="false" schemaversion="2">
 <suite id="s1" name="Tests" source="/opt/robotframework/tests">
 <suite id="s1-s1" name="Test Cases" source="/opt/robotframework/tests/test_cases.robot">
 <test id="s1-s1-t1" name="Cenário: Salvando um novo herói - Hulk">
@@ -12,25 +12,25 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210824 20:31:03.733" level="INFO">Opening browser 'chrome' to base url 'https://angular-heroi.herokuapp.com/herois'.</msg>
-<status status="PASS" starttime="20210824 20:31:03.733" endtime="20210824 20:31:04.620"/>
+<msg timestamp="20210824 20:39:09.556" level="INFO">Opening browser 'chrome' to base url 'https://angular-heroi.herokuapp.com/herois'.</msg>
+<status status="PASS" starttime="20210824 20:39:09.555" endtime="20210824 20:39:11.625"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${ADICIONAR}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210824 20:31:04.620" endtime="20210824 20:31:04.657"/>
+<status status="PASS" starttime="20210824 20:39:11.625" endtime="20210824 20:39:11.681"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>angular-heroi</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210824 20:31:04.661" level="INFO">Page title is 'angular-heroi'.</msg>
-<status status="PASS" starttime="20210824 20:31:04.657" endtime="20210824 20:31:04.661"/>
+<msg timestamp="20210824 20:39:11.686" level="INFO">Page title is 'angular-heroi'.</msg>
+<status status="PASS" starttime="20210824 20:39:11.681" endtime="20210824 20:39:11.686"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:03.733" endtime="20210824 20:31:04.661"/>
+<status status="PASS" starttime="20210824 20:39:09.555" endtime="20210824 20:39:11.686"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:03.732" endtime="20210824 20:31:04.661"/>
+<status status="PASS" starttime="20210824 20:39:09.555" endtime="20210824 20:39:11.686"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:03.732" endtime="20210824 20:31:04.662"/>
+<status status="PASS" starttime="20210824 20:39:09.554" endtime="20210824 20:39:11.687"/>
 </kw>
 <kw name="Quando clicar em &quot;Adicionar&quot;" library="bdd_pt-br" sourcename="Quando ${keyword}">
 <kw name="Run Keyword" library="BuiltIn">
@@ -40,14 +40,14 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${ADICIONAR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210824 20:31:04.663" level="INFO">Clicking element 'xpath=.//nav/div/li[2]/a'.</msg>
-<status status="PASS" starttime="20210824 20:31:04.663" endtime="20210824 20:31:04.720"/>
+<msg timestamp="20210824 20:39:11.689" level="INFO">Clicking element 'xpath=.//nav/div/li[2]/a'.</msg>
+<status status="PASS" starttime="20210824 20:39:11.688" endtime="20210824 20:39:11.756"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.662" endtime="20210824 20:31:04.720"/>
+<status status="PASS" starttime="20210824 20:39:11.688" endtime="20210824 20:39:11.757"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.662" endtime="20210824 20:31:04.720"/>
+<status status="PASS" starttime="20210824 20:39:11.687" endtime="20210824 20:39:11.757"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.662" endtime="20210824 20:31:04.720"/>
+<status status="PASS" starttime="20210824 20:39:11.687" endtime="20210824 20:39:11.757"/>
 </kw>
 <kw name="E Inserir &quot;Hulk&quot;, &quot;Bruce Benner&quot; e &quot;Marvel&quot;" library="bdd_pt-br" sourcename="E ${keyword}">
 <kw name="Run Keyword" library="BuiltIn">
@@ -58,27 +58,27 @@
 <arg>${CAMPO_NOME}</arg>
 <arg>${NOME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210824 20:31:04.722" level="INFO">Typing text 'Hulk' into text field 'id=nome'.</msg>
-<status status="PASS" starttime="20210824 20:31:04.721" endtime="20210824 20:31:04.807"/>
+<msg timestamp="20210824 20:39:11.759" level="INFO">Typing text 'Hulk' into text field 'id=nome'.</msg>
+<status status="PASS" starttime="20210824 20:39:11.759" endtime="20210824 20:39:11.867"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${CAMPO_NOME_CIVIL}</arg>
 <arg>${NOME_CIVIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210824 20:31:04.808" level="INFO">Typing text 'Bruce Benner' into text field 'id=nomeCivil'.</msg>
-<status status="PASS" starttime="20210824 20:31:04.807" endtime="20210824 20:31:04.900"/>
+<msg timestamp="20210824 20:39:11.867" level="INFO">Typing text 'Bruce Benner' into text field 'id=nomeCivil'.</msg>
+<status status="PASS" starttime="20210824 20:39:11.867" endtime="20210824 20:39:11.982"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${COMBO_UNIVERSO}/option[@value='${UNIVERSO}']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210824 20:31:04.901" level="INFO">Clicking element 'xpath=.//select[@id="universo"]/option[@value='Marvel']'.</msg>
-<status status="PASS" starttime="20210824 20:31:04.900" endtime="20210824 20:31:04.935"/>
+<msg timestamp="20210824 20:39:11.983" level="INFO">Clicking element 'xpath=.//select[@id="universo"]/option[@value='Marvel']'.</msg>
+<status status="PASS" starttime="20210824 20:39:11.982" endtime="20210824 20:39:12.028"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.721" endtime="20210824 20:31:04.935"/>
+<status status="PASS" starttime="20210824 20:39:11.758" endtime="20210824 20:39:12.028"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.721" endtime="20210824 20:31:04.935"/>
+<status status="PASS" starttime="20210824 20:39:11.758" endtime="20210824 20:39:12.028"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.720" endtime="20210824 20:31:04.935"/>
+<status status="PASS" starttime="20210824 20:39:11.757" endtime="20210824 20:39:12.028"/>
 </kw>
 <kw name="E clicar em &quot;Salvar&quot;" library="bdd_pt-br" sourcename="E ${keyword}">
 <kw name="Run Keyword" library="BuiltIn">
@@ -88,14 +88,14 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${SALVAR}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210824 20:31:04.937" level="INFO">Clicking element 'xpath=.//app-create/div/div/div/button'.</msg>
-<status status="PASS" starttime="20210824 20:31:04.936" endtime="20210824 20:31:04.981"/>
+<msg timestamp="20210824 20:39:12.030" level="INFO">Clicking element 'xpath=.//app-create/div/div/div/button'.</msg>
+<status status="PASS" starttime="20210824 20:39:12.030" endtime="20210824 20:39:12.086"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.936" endtime="20210824 20:31:04.982"/>
+<status status="PASS" starttime="20210824 20:39:12.029" endtime="20210824 20:39:12.087"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.936" endtime="20210824 20:31:04.982"/>
+<status status="PASS" starttime="20210824 20:39:12.029" endtime="20210824 20:39:12.087"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.936" endtime="20210824 20:31:04.982"/>
+<status status="PASS" starttime="20210824 20:39:12.028" endtime="20210824 20:39:12.087"/>
 </kw>
 <kw name="Então apresentará a mensagem &quot;Novo herói adicionado!&quot;" library="bdd_pt-br" sourcename="Então ${keyword}">
 <kw name="Run Keyword" library="BuiltIn">
@@ -105,32 +105,32 @@
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${MENSAGEM_EXIBIDA}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210824 20:31:04.983" endtime="20210824 20:31:05.216"/>
+<status status="PASS" starttime="20210824 20:39:12.088" endtime="20210824 20:39:12.336"/>
 </kw>
 <kw name="Page Should Contain" library="SeleniumLibrary">
 <arg>${MENSAGEM}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20210824 20:31:05.229" level="INFO">Current page contains text 'Novo herói adicionado!'.</msg>
-<status status="PASS" starttime="20210824 20:31:05.216" endtime="20210824 20:31:05.229"/>
+<msg timestamp="20210824 20:39:12.353" level="INFO">Current page contains text 'Novo herói adicionado!'.</msg>
+<status status="PASS" starttime="20210824 20:39:12.336" endtime="20210824 20:39:12.353"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.983" endtime="20210824 20:31:05.230"/>
+<status status="PASS" starttime="20210824 20:39:12.088" endtime="20210824 20:39:12.354"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.982" endtime="20210824 20:31:05.230"/>
+<status status="PASS" starttime="20210824 20:39:12.088" endtime="20210824 20:39:12.354"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:04.982" endtime="20210824 20:31:05.230"/>
+<status status="PASS" starttime="20210824 20:39:12.087" endtime="20210824 20:39:12.354"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:03.731" endtime="20210824 20:31:05.230"/>
+<status status="PASS" starttime="20210824 20:39:09.553" endtime="20210824 20:39:12.354"/>
 </test>
 <kw name="Fechar Navegador" library="resource_bdd" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210824 20:31:05.233" endtime="20210824 20:31:05.290"/>
+<status status="PASS" starttime="20210824 20:39:12.356" endtime="20210824 20:39:12.417"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:05.233" endtime="20210824 20:31:05.291"/>
+<status status="PASS" starttime="20210824 20:39:12.356" endtime="20210824 20:39:12.417"/>
 </kw>
-<status status="PASS" starttime="20210824 20:31:03.586" endtime="20210824 20:31:05.291"/>
+<status status="PASS" starttime="20210824 20:39:09.367" endtime="20210824 20:39:12.417"/>
 </suite>
-<status status="PASS" starttime="20210824 20:31:03.566" endtime="20210824 20:31:05.292"/>
+<status status="PASS" starttime="20210824 20:39:09.340" endtime="20210824 20:39:12.424"/>
 </suite>
 <statistics>
 <total>
