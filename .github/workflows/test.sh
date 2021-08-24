@@ -8,7 +8,7 @@ docker run --shm-size=$ALLOWED_SHARED_MEMORY \
   -e ROBOT_THREADS=$ROBOT_THREADS \
   -e PABOT_OPTIONS=$PABOT_OPTIONS \
   -e ROBOT_OPTIONS=$ROBOT_OPTIONS \
-  -v $REPORTS_DIR:/opt/obotframework-ci/report:Z \
-  -v $TESTS_DIR:/opt/obotframework-ci/test/feature:Z \
+  -v $REPORTS_DIR:/opt/robotframework-ci/report:Z \
+  -v $TESTS_DIR:/opt/robotframework-ci/test/feature:Z \
   --user $(id -u):$(id -g) \
   ppodgorsek/robot-framework:latest
