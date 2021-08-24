@@ -7,37 +7,22 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        name: Run Robot Framework Tests
         steps:
-        - shell: bash
-          run: ${{ github.action_path }}/test.sh
-          env:
-            ALLOWED_SHARED_MEMORY: ${{ inputs.allowed_shared_memory }}
-            BROWSER: ${{ inputs.browser }}
-            ROBOT_THREADS: ${{ inputs.robot_threads }}
-            PABOT_OPTIONS: ${{ inputs.pabot_options }}
-            ROBOT_OPTIONS: ${{ inputs.robot_options }}
-            SCREEN_COLOR_DEPTH: ${{ inputs.screen_color_depth }}
-            SCREEN_HEIGHT: ${{ inputs.screen_height }}
-            SCREEN_WIDTH: ${{ inputs.screen_width }}
-            ROBOT_TESTS_DIR: ${{ inputs.robot_tests_dir }}
-            ROBOT_REPORTS_DIR: ${{ inputs.robot_reports_dir }}
-        
         - uses: actions/checkout@v2
         - name: Execute tests
           uses: joonvena/robotframework-docker-action@v0.1
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
-            ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
-
+            #ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
+            
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
           with:
             name: report
             path: ${{ github.workspace }}/report
-
+            
         - name: Deploy report page to GitHub Page
           uses: peaceiris/actions-gh-pages@v3
           with:
