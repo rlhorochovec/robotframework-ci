@@ -16,7 +16,7 @@ jobs:
             ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
             ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
         - name: Permission folder
-          run: sudo mkdir chmod 777 ${{ github.workspace }}/report
+          run: sudo mkdir $ROBOT_REPORTS_DIR && sudo chmod 777 $ROBOT_REPORTS_DIR
             
         - name: Upload test results
           uses: actions/upload-artifact@v1
