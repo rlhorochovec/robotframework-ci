@@ -11,10 +11,12 @@ jobs:
         - uses: actions/checkout@v2
         - name: Execute tests
           uses: joonvena/robotframework-docker-action@v0.1
+        - shell: bash
+          run: ${{ github.action_path }}/test.sh
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
-            #ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
             
         - name: Upload test results
           uses: actions/upload-artifact@v1
