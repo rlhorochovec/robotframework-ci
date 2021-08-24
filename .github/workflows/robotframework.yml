@@ -10,7 +10,13 @@ jobs:
         steps:
         - uses: actions/checkout@v2
         - name: Execute tests
-          uses: joonvena/robotframework-docker-action@v0.1
+          run: |
+            mkdir ${{github.workspace}}/reports
+            docker run --shm-size=1g -e BROWSER=headlesschrome \
+            -v ${{github.workspace}}/test/feature:/opt/robotframework/tests:Z \
+            -v ${{github.workspace}}/report:/opt/robotframework/reports:Z \
+            --user 1001:1000 \
+            ppodgorsek/robot-framework:latest
           env:
             BROWSER: chrome
             ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
