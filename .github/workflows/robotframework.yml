@@ -13,24 +13,24 @@ jobs:
           run: |
             mkdir ${{github.workspace}}/reports
             docker run --shm-size=1g -e BROWSER=headlesschrome \
-            -v ${{github.workspace}}/test/feature:/opt/robotframework/tests:Z \
-            -v ${{github.workspace}}/report:/opt/robotframework/reports:Z \
+            -v ${{github.workspace}}/tests:/opt/robotframework/tests:Z \
+            -v ${{github.workspace}}/reports:/opt/robotframework/reports:Z \
             --user 1001:1000 \
             ppodgorsek/robot-framework:latest
           env:
             BROWSER: chrome
-            ROBOT_TESTS_DIR: ${{ github.workspace }}/test/feature
-            ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/tests
+            ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
           
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
           with:
-            name: report
-            path: ./report
+            name: reports
+            path: ./reports
             
         - name: Deploy report page to GitHub Page
           uses: peaceiris/actions-gh-pages@v3
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./report
+            publish_dir: ./reports
