@@ -17,13 +17,6 @@ jobs:
             -v ${{github.workspace}}/reports:/opt/robotframework/reports:Z \
             --user 1001:1000 \
             ppodgorsek/robot-framework:latest
-          
-        - name: Upload tests results
-          uses: actions/upload-artifact@v1
-          if: always()
-          with:
-            name: reports
-            path: ./reports
             
         - name: Deploy report page to GitHub Page
           uses: peaceiris/actions-gh-pages@v3
