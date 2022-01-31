@@ -6,7 +6,7 @@ Suite Teardown   Fechar Navegador
 *** Test Cases ***
 Cenário: Salvando um novo herói - Hulk
     Dado que desejo salvar um novo herói
-    Quando clicar em "Adicionar"
+    Quando clicar em "Criar"
     E Inserir "Hulk", "Bruce Benner" e "Marvel"
     E clicar em "Salvar"
-    Então apresentará a mensagem "Novo herói adicionado!"
+    Então apresentará a mensagem "Herói salvo com sucesso!"
