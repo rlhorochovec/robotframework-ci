@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.0 on linux)" generated="20220318 16:40:23.487" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.9.0 on linux)" generated="20220318 16:49:38.700" rpa="false" schemaversion="2">
 <suite id="s1" name="Tests" source="/opt/robotframework/tests">
 <suite id="s1-s1" name="Test Cases" source="/opt/robotframework/tests/test_cases.robot">
 <test id="s1-s1-t1" name="Cenário: Salvando um novo herói - Hulk">
@@ -12,65 +12,141 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220318 16:40:23.658" level="INFO">Opening browser 'chrome' to base url 'https://web-heroi.herokuapp.com/herois'.</msg>
-<status status="PASS" starttime="20220318 16:40:23.657" endtime="20220318 16:40:26.108"/>
+<msg timestamp="20220318 16:49:38.873" level="INFO">Opening browser 'chrome' to base url 'https://web-heroi.herokuapp.com/herois'.</msg>
+<status status="PASS" starttime="20220318 16:49:38.872" endtime="20220318 16:49:41.274"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>${1400}</arg>
+<arg>${600}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20220318 16:49:41.274" endtime="20220318 16:49:41.380"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${CRIAR}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220318 16:40:31.234" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220318 16:40:31.145" endtime="20220318 16:40:31.234"/>
-</kw>
-<msg timestamp="20220318 16:40:31.236" level="FAIL">Element 'xpath=.//*[@id="navbarTogglerDemo02"]/ul/li[2]/a' not visible after 5 seconds.</msg>
-<status status="FAIL" starttime="20220318 16:40:26.108" endtime="20220318 16:40:31.236"/>
+<status status="PASS" starttime="20220318 16:49:41.381" endtime="20220318 16:49:41.407"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Web-Herói</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" starttime="20220318 16:40:31.236" endtime="20220318 16:40:31.236"/>
+<msg timestamp="20220318 16:49:41.412" level="INFO">Page title is 'Web-Herói'.</msg>
+<status status="PASS" starttime="20220318 16:49:41.408" endtime="20220318 16:49:41.412"/>
 </kw>
-<status status="FAIL" starttime="20220318 16:40:23.657" endtime="20220318 16:40:31.237"/>
+<status status="PASS" starttime="20220318 16:49:38.872" endtime="20220318 16:49:41.412"/>
 </kw>
-<status status="FAIL" starttime="20220318 16:40:23.657" endtime="20220318 16:40:31.237"/>
+<status status="PASS" starttime="20220318 16:49:38.872" endtime="20220318 16:49:41.412"/>
 </kw>
-<status status="FAIL" starttime="20220318 16:40:23.656" endtime="20220318 16:40:31.238"/>
+<status status="PASS" starttime="20220318 16:49:38.872" endtime="20220318 16:49:41.412"/>
 </kw>
 <kw name="Quando clicar em &quot;Criar&quot;" library="bdd_pt-br" sourcename="Quando ${keyword}">
-<status status="NOT RUN" starttime="20220318 16:40:31.238" endtime="20220318 16:40:31.238"/>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="clicar em &quot;Criar&quot;" library="resource_bdd">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CRIAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220318 16:49:41.413" level="INFO">Clicking element 'xpath=.//*[@id="navbarTogglerDemo02"]/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20220318 16:49:41.413" endtime="20220318 16:49:41.473"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.413" endtime="20220318 16:49:41.473"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.413" endtime="20220318 16:49:41.473"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.412" endtime="20220318 16:49:41.473"/>
 </kw>
 <kw name="E Inserir &quot;Hulk&quot;, &quot;Bruce Benner&quot; e &quot;Marvel&quot;" library="bdd_pt-br" sourcename="E ${keyword}">
-<status status="NOT RUN" starttime="20220318 16:40:31.238" endtime="20220318 16:40:31.238"/>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Inserir &quot;Hulk&quot;, &quot;Bruce Benner&quot; e &quot;Marvel&quot;" library="resource_bdd" sourcename="Inserir &quot;${NOME}&quot;, &quot;${NOME_CIVIL}&quot; e &quot;${UNIVERSO}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_NOME}</arg>
+<arg>${NOME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220318 16:49:41.474" level="INFO">Typing text 'Hulk' into text field 'id=name'.</msg>
+<status status="PASS" starttime="20220318 16:49:41.474" endtime="20220318 16:49:41.564"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_NOME_CIVIL}</arg>
+<arg>${NOME_CIVIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220318 16:49:41.565" level="INFO">Typing text 'Bruce Benner' into text field 'id=civil'.</msg>
+<status status="PASS" starttime="20220318 16:49:41.564" endtime="20220318 16:49:41.658"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${COMBO_UNIVERSO}/option[@value='${UNIVERSO}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220318 16:49:41.659" level="INFO">Clicking element 'xpath=.//select[@id="universe"]/option[@value='Marvel']'.</msg>
+<status status="PASS" starttime="20220318 16:49:41.658" endtime="20220318 16:49:41.694"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.474" endtime="20220318 16:49:41.695"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.473" endtime="20220318 16:49:41.695"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.473" endtime="20220318 16:49:41.695"/>
 </kw>
 <kw name="E clicar em &quot;Salvar&quot;" library="bdd_pt-br" sourcename="E ${keyword}">
-<status status="NOT RUN" starttime="20220318 16:40:31.238" endtime="20220318 16:40:31.238"/>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="clicar em &quot;Salvar&quot;" library="resource_bdd">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SALVAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220318 16:49:41.696" level="INFO">Clicking element 'xpath=.//app-criar-heroi/div/div/div/button'.</msg>
+<status status="PASS" starttime="20220318 16:49:41.696" endtime="20220318 16:49:41.740"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.696" endtime="20220318 16:49:41.740"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.695" endtime="20220318 16:49:41.740"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.695" endtime="20220318 16:49:41.740"/>
 </kw>
 <kw name="Então apresentará a mensagem &quot;Herói salvo com sucesso!&quot;" library="bdd_pt-br" sourcename="Então ${keyword}">
-<status status="NOT RUN" starttime="20220318 16:40:31.238" endtime="20220318 16:40:31.238"/>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="apresentará a mensagem &quot;Herói salvo com sucesso!&quot;" library="resource_bdd" sourcename="apresentará a mensagem &quot;${MENSAGEM}&quot;">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MENSAGEM_EXIBIDA}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220318 16:49:41.741" endtime="20220318 16:49:41.974"/>
 </kw>
-<status status="FAIL" starttime="20220318 16:40:23.655" endtime="20220318 16:40:31.239">Element 'xpath=.//*[@id="navbarTogglerDemo02"]/ul/li[2]/a' not visible after 5 seconds.</status>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${MENSAGEM}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220318 16:49:41.988" level="INFO">Current page contains text 'Herói salvo com sucesso!'.</msg>
+<status status="PASS" starttime="20220318 16:49:41.974" endtime="20220318 16:49:41.988"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.741" endtime="20220318 16:49:41.988"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.741" endtime="20220318 16:49:41.988"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:41.740" endtime="20220318 16:49:41.988"/>
+</kw>
+<status status="PASS" starttime="20220318 16:49:38.871" endtime="20220318 16:49:41.988"/>
 </test>
 <kw name="Fechar Navegador" library="resource_bdd" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220318 16:40:31.240" endtime="20220318 16:40:31.298"/>
+<status status="PASS" starttime="20220318 16:49:41.990" endtime="20220318 16:49:42.048"/>
 </kw>
-<status status="PASS" starttime="20220318 16:40:31.240" endtime="20220318 16:40:31.298"/>
+<status status="PASS" starttime="20220318 16:49:41.990" endtime="20220318 16:49:42.048"/>
 </kw>
-<status status="FAIL" starttime="20220318 16:40:23.509" endtime="20220318 16:40:31.298"/>
+<status status="PASS" starttime="20220318 16:49:38.721" endtime="20220318 16:49:42.048"/>
 </suite>
-<status status="FAIL" starttime="20220318 16:40:23.488" endtime="20220318 16:40:31.300"/>
+<status status="PASS" starttime="20220318 16:49:38.701" endtime="20220318 16:49:42.050"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Test Cases">Tests.Test Cases</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test Cases">Tests.Test Cases</stat>
 </suite>
 </statistics>
 <errors>
