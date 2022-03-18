@@ -15,6 +15,7 @@ ${MENSAGEM_EXIBIDA}    xpath=.//app-criar-heroi/div/div/div/h4
 #### DADO
 que desejo salvar um novo herói
     Open Browser                     ${URL}           ${BROWSER}
+    Set Window Size                  ${1400}          ${600}
     Wait Until Element Is Visible    ${CRIAR}
     Title Should Be                  Web-Herói
 
