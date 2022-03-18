@@ -5,9 +5,9 @@ Library    SeleniumLibrary
 ${BROWSER}             chrome
 ${URL}                 https://web-heroi.herokuapp.com/herois
 ${CRIAR}               xpath=.//nav/div/li[2]/a
-${CAMPO_NOME}          id=nome
-${CAMPO_NOME_CIVIL}    id=nomeCivil
-${COMBO_UNIVERSO}      xpath=.//select[@id="universo"]
+${CAMPO_NOME}          id=name
+${CAMPO_NOME_CIVIL}    id=civil
+${COMBO_UNIVERSO}      xpath=.//select[@id="universe"]
 ${SALVAR}              xpath=.//app-criar-heroi/div/div/div/button
 ${MENSAGEM_EXIBIDA}    xpath=.//app-criar-heroi/div/div/div/h4
 
