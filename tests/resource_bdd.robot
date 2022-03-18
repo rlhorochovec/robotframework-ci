@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 *** Variable ***
 ${BROWSER}             chrome
 ${URL}                 https://web-heroi.herokuapp.com/herois
-${CRIAR}               xpath=.//nav/div/li[2]/a
+${CRIAR}               xpath=.//*[@id="navbarTogglerDemo02"]/ul/li[2]/a
 ${CAMPO_NOME}          id=name
 ${CAMPO_NOME_CIVIL}    id=civil
 ${COMBO_UNIVERSO}      xpath=.//select[@id="universe"]
